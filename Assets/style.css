@@ -1,0 +1,18 @@
+.header {
+    background-color: rgb(18, 18, 84);
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+.input-group {
+   padding-top: 10px;
+    width: 17%;
+}
+
+.search-title {
+    padding-top: 10px;
+}
