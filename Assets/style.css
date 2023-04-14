@@ -25,3 +25,13 @@
 .card-fiveday {
     width: 18rem;
 }
+
+.row {
+    margin-right: 0;
+}
+
+.currentRow {
+     width: 100%;
+     border: 1px solid black;
+     height: 200px;
+}
