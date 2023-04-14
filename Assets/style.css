@@ -10,9 +10,18 @@
 
 .input-group {
    padding-top: 10px;
-    width: 13%;
+    width: 90%;
 }
 
 .search-title {
     padding-top: 10px;
+}
+
+.current-forecast {
+    position: absolute;
+    right: 800px;
+}
+
+.card-fiveday {
+    width: 18rem;
 }
