@@ -2,7 +2,7 @@ var searchBtnEl = document.querySelector("#search-btn");
 var userInputEl = document.querySelector("#input-val");
 var historyTab = document.querySelector('.historyTab')
 
-// getHistory()
+getHistory();
 
 var cityArr = JSON.parse(localStorage.getItem("city")) || []
 
@@ -32,6 +32,9 @@ function addCityBtn() {
 
 function getHistory() {
   var history = JSON.parse(localStorage.getItem("city"))
+  if (history === null) {
+    console.log('another test')
+  } else {
   for(let i = 0; i < history.length; i++) {
     var cityBtn = document.createElement("button")
     cityBtn.setAttribute("class", "btn btn-primary")
@@ -41,6 +44,7 @@ function getHistory() {
       getApi(cityBtnValue)
     })
     historyTab.append(cityBtn)
+    }  
   }
 }
 
@@ -61,7 +65,7 @@ function getApi(cityName) {
   <div class="card-body">
     <h5 class="card-title">${apiResults.list[i].dt_txt}</h5>
     <img src="https://openweathermap.org/img/wn/${apiResults.list[i].weather[0].icon}@2x.png" class="card-subtitle"></a>
-    <p class="card-tile">Overcast: ${apiResults.list[i].weather[0].description}</p>
+    <p class="card-desc">Overcast: ${apiResults.list[i].weather[0].description}</p>
     <p class="card-subtitle mb-2 text-body-secondary">Temp: ${apiResults.list[i].main.temp} °F</p>
     <p class="card-text">Wind Speed: ${apiResults.list[i].wind.speed} MPH</p>
     <p class="card-link">Humidity: ${apiResults.list[i].main.humidity} %</p>
@@ -77,7 +81,10 @@ function getApi(cityName) {
       })
       .then((apiResults) => {
         console.log(apiResults)
+        var htmlBox = "";
+        htmlBox += `
         
+        `
       })
     }) 
 }
