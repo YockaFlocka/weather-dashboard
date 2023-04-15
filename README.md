@@ -30,4 +30,4 @@ Here is a screenshot of the working webpage:
 
 Below is a link to the live webpage:
 
-[Weather Dashboard]()
+[Weather Dashboard](https://yockaflocka.github.io/weather-dashboard/)
