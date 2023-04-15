@@ -17,13 +17,14 @@
     padding-top: 10px;
 }
 
-.current-forecast {
+/* .current-forecast {
     position: absolute;
     right: 800px;
-}
+} */
 
 .card-fiveday {
     width: 18rem;
+    background-color: #6D5D6E;
 }
 
 .row {
@@ -31,7 +32,16 @@
 }
 
 .currentRow {
-     width: 100%;
+    margin-top: 20px; 
+    width: 100%;
      border: 1px solid black;
-     height: 200px;
+     height: 300px;
+     text-align: center;
+     background-color: #6D5D6E;
+     /* display: none; */
+}
+
+.five-day-title {
+    padding: 20px;
+    /* display: none; */
 }
