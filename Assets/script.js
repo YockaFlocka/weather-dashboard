@@ -14,23 +14,18 @@ searchBtnEl.addEventListener("click", function () {
   cityArr.push(cityName)
   localStorage.setItem("city", JSON.stringify(cityArr))
   getApi(cityName);
-  addCityBtn();
+  addCityBtn(cityName);
 });
 
 // function to add a city button based on last search
-function addCityBtn() {
-  var history = JSON.parse(localStorage.getItem("city"))
-  for(let i = 0; i < history.length; i++) {
+function addCityBtn(cityName) {
     var cityBtn = document.createElement("button")
     cityBtn.setAttribute("class", "btn btn-primary")
-    cityBtn.innerHTML = history[history.length - 1]
-    var cityBtnValue = cityBtn.innerHTML
+    cityBtn.innerHTML = cityName;
     cityBtn.addEventListener("click", function () {
-      getApi(cityBtnValue)
+      getApi(cityName)
     })
     historyTab.append(cityBtn)
-    break;
-  }
 }
 
 // function to generate search history from saved local storage
@@ -43,9 +38,8 @@ function getHistory() {
     var cityBtn = document.createElement("button")
     cityBtn.setAttribute("class", "btn btn-primary")
     cityBtn.innerHTML = history[i]
-    var cityBtnValue = cityBtn.innerHTML
     cityBtn.addEventListener("click", function () {
-      getApi(cityBtnValue)
+      getApi(history[i])
     })
     historyTab.append(cityBtn)
     }  
@@ -92,6 +86,7 @@ function getApi(cityName) {
         // current day forecast html
         htmlBox += `
         <h4 class='weather-title'>${apiResults.name}</h4>
+        <h5 id='date-title'>${dayjs().format('MMM D, YYYY')}</h5>
         <img src="https://openweathermap.org/img/wn/${apiResults.weather[0].icon}@2x.png"></img>
         <p>Overcast: ${apiResults.weather[0].main}</p>
         <p>Temp: ${apiResults.main.temp} °F</p>
@@ -103,4 +98,4 @@ function getApi(cityName) {
     }) 
 }
 
-/* <h4 id='date-title'>${('date-title').text(dayjs().format('MMM D, YYYY'))}</h4> */
+ 
